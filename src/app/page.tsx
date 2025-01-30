@@ -51,7 +51,7 @@ export default function Home() {
   return (
     <>
       {isLoading && <Loading />}
-      <div className="p-10 w-[800px] mx-auto">
+      <div className="md:p-10 w-[300px] md:w-[800px] mx-auto">
         <h1 className="text-2xl font-bold text-center mb-8">Chatbot</h1>
         <div className="flex flex-col items-center w-full">
           <div className="px-10 flex flex-col gap-y-4 w-full">
@@ -62,16 +62,16 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <form className="flex mt-4" onSubmit={handleSubmit}>
+          <form className="flex w-full mt-4" onSubmit={handleSubmit}>
             <input
-              className="border w-[300px] border-gray-300 rounded-md p-2"
+              className="border grow md:w-[300px] border-gray-300 rounded-md p-2"
               name="input"
               value={input}
               placeholder="質問を入力してください"
               onChange={(e) => setInput(e.target.value)}
             />
             <button
-              className="rounded-md bg-black py-2 px-3 text-white"
+              className="rounded-md shrink-0 bg-black py-2 px-3 text-white"
               type="submit"
             >
               送信
