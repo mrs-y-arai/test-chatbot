@@ -8,8 +8,9 @@ const openai = new OpenAI({
 export async function POST(req: Request) {
   const { messages } = await req.json();
 
-  const systemPrompt =
-    "あなたは、Next.jsが得意なフロントエンドエンジニアです。ユーザーの質問に答えてください。";
+  const systemPrompt = `あなたは、Next.jsが得意なフロントエンドエンジニアです。ユーザーの質問に答えてください。
+    注意点:
+    今までの会話履歴はもプロンプトに含めておりますので、その内容を参考にしてください。`;
 
   const result = await openai.chat.completions.create({
     model: "gpt-4o",

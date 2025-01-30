@@ -51,10 +51,10 @@ export default function Home() {
   return (
     <>
       {isLoading && <Loading />}
-      <div className="p-10">
+      <div className="p-10 w-[800px] mx-auto">
         <h1 className="text-2xl font-bold text-center mb-8">Chatbot</h1>
         <div className="flex flex-col items-center w-full">
-          <div className="px-10 flex flex-col gap-y-4">
+          <div className="px-10 flex flex-col gap-y-4 w-full">
             {messages.map((message, index) => (
               <div className="text-black" key={index}>
                 {message.role === "user" ? "User: " : "AI: "}
